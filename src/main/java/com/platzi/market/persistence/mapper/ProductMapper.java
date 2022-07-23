@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import java.util.List;
+
 //el uses es para que mapee categoria a Category, ya que tiene su propio Mapper
 @Mapper( componentModel = "spring", uses = {CategoryMapper.class} )
 public interface ProductMapper {
@@ -18,7 +20,7 @@ public interface ProductMapper {
 //            @Mapping(source = "codigoBarras", target = "barcode"),
             @Mapping(source = "precioVenta", target = "price"),
             @Mapping(source = "cantidadStock", target = "stock"),
-            @Mapping(source = "estado", target = "active")
+            @Mapping(source = "estado", target = "active"),
             @Mapping(source = "categoria", target = "category")
     })
 
