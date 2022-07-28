@@ -13,6 +13,7 @@ import java.util.List;
 @Mapper( componentModel = "spring", uses = {CategoryMapper.class} )
 public interface ProductMapper {
 
+    //Mapeamos el entity Producto a Product (Variables de esp a ingles)
     @Mappings({
             @Mapping(source = "idProducto", target = "productId"),
             @Mapping(source = "nombre", target = "name"),
@@ -23,10 +24,11 @@ public interface ProductMapper {
             @Mapping(source = "estado", target = "active"),
             @Mapping(source = "categoria", target = "category")
     })
-
     Product toProduct(Producto producto);
     List<Product> toProducts(List<Producto> productos);
 
+    //Conversion contraria, la anotacion InheritInverseConfiguration
+    //Nos ahorra hacer los Mappings de arriba para esta conversion contraria
     @InheritInverseConfiguration
     @Mappings({
             @Mapping(target = "codigoBarras", ignore = true)

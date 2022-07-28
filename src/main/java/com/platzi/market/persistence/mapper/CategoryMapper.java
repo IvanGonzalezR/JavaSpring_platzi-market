@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
-    //Mapeo de la clase Categoria a Category con MapStruct
+    // //Mapeamos el entity Categoria a Category (Variables de esp a ingles)
     @Mappings({
             @Mapping(source = "idCategoria", target = "categoryId"),
             @Mapping(source = "descripcion", target = "category"),
