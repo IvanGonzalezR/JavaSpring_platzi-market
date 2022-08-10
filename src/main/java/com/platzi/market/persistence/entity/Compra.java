@@ -3,6 +3,7 @@ package com.platzi.market.persistence.entity;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Stack;
 
 @Entity
 @Table(name = "compras")
@@ -31,7 +32,7 @@ public class Compra {
             updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
     private List<ComprasProducto> productos;
 
     public Long getIdCompra() {
@@ -82,5 +83,19 @@ public class Compra {
         this.estado = estado;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
 
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<ComprasProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<ComprasProducto> productos) {
+        this.productos = productos;
+    }
 }
