@@ -23,7 +23,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping()
+    @GetMapping("/all")
     @ApiOperation(value = "Get all products")
     @ApiResponse(code = 200, message = "Successful operation")
     public ResponseEntity<List<Product>> getAll(){
