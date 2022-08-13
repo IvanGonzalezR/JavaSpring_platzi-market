@@ -37,17 +37,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           web.ignoring().antMatchers("/**/authenticate");
      }
 
-     @Override
-     public void configure(HttpSecurity http) throws Exception {
-          http.sessionManagement()
-                  .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//     @Override
+//     public void configure(HttpSecurity http) throws Exception {
+//          http.sessionManagement()
+//                  .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//
+//          http.addFilterBefore(jwtFilterRequest, UsernamePasswordAuthenticationFilter.class);
+//     }
 
-          http.addFilterBefore(jwtFilterRequest, UsernamePasswordAuthenticationFilter.class);
-     }
-
-     @Override
-     @Bean
-     public AuthenticationManager authenticationManagerBean() throws Exception {
-          return super.authenticationManagerBean();
-     }
+//     @Override
+//     @Bean
+//     public AuthenticationManager authenticationManagerBean() throws Exception {
+//          return super.authenticationManagerBean();
+//     }
 }
